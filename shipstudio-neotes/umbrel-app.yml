@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.4.0"
+version: "0.4.1"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,10 +31,10 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Reads an Eagle library directly from the Umbrel's own file storage. Browse and
-  search it in the app, and import an item with one click — no uploading, and
-  the Eagle desktop app does not need to be running. Set EAGLE_LIBRARY_PATH to
-  your library's path under /storage to enable it.
+  The Eagle page now explains exactly why a library cannot be read — whether the
+  storage mount arrived, whether the path exists — and lists the libraries it
+  can find so the right value can be copied straight into settings. The editor
+  also warns plainly when authentication is switched off.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
