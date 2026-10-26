@@ -1,0 +1,40 @@
+version: "3.7"
+
+services:
+  # Umbrel's reverse proxy. It provides the umbrelOS login wall for anyone
+  # reaching the app on the LAN; public access comes via Cloudflare Tunnel,
+  # which should point at the `web` service directly.
+  app_proxy:
+    environment:
+      APP_HOST: shipstudio-neotes_web_1
+      APP_PORT: 3000
+
+  web:
+    # Pinned by digest, not tag: umbrelOS caches aggressively, and a mutable
+    # :latest makes "did my update actually deploy?" unanswerable.
+    image: ghcr.io/icraigshaw/neotes@sha256:55b1a64f3a3ec8967b22472cb3491105d8361e30cba2c0ab17fffcf2a33516be
+    restart: on-failure
+    stop_grace_period: 1m
+    volumes:
+      - ${APP_DATA_DIR}/data:/data
+    environment:
+      # --- Shown in the Umbrel app settings UI under "Suggested by this app" ---
+      # Public origin of the published site. Must match the Cloudflare Tunnel
+      # hostname or canonical URLs and feeds will be wrong.
+      NEOTES_SITE_URL: "http://umbrel.local:3000"
+
+      # cf-access trusts Cloudflare Access in front of /admin. Set this to
+      # cf-access once the tunnel + Access policy are live.
+      ADMIN_AUTH_MODE: "none"
+      CF_ACCESS_TEAM_DOMAIN: ""
+      CF_ACCESS_AUD: ""
+
+      # local serves video from this box through the tunnel — fine for short
+      # clips, wrong for hour-long pieces. Switch to bunny for longform.
+      MEDIA_VIDEO_BACKEND: "local"
+      BUNNY_STREAM_LIBRARY_ID: ""
+      BUNNY_STREAM_API_KEY: ""
+      BUNNY_STREAM_CDN_HOSTNAME: ""
+
+      # Shared secret the Eagle bridge uses. CHANGE THIS.
+      EAGLE_BRIDGE_TOKEN: "change-me-in-production"

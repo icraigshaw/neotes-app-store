@@ -1,0 +1,37 @@
+manifestVersion: 1
+id: shipstudio-neotes
+category: files
+name: Neotes
+version: "0.1.0"
+tagline: Write, manage and publish notes
+description: >-
+  A notetaking and journalling app with a publishing pipeline.
+
+
+  Sheets are written in Markdown and organised in a library tree. Internal links
+  between sheets are stored as stable IDs, so retitling or re-slugging a sheet
+  never breaks a link — on publish they resolve to the target's public URL, and
+  old URLs keep redirecting.
+
+
+  Bulk operations (publish, unpublish, find-and-replace across many sheets) all
+  run as plan-then-apply, with a one-click undo for the whole batch.
+
+
+  Media is curated in Eagle and copied into Neotes at publish time by a small
+  bridge agent, so published pages never depend on a desktop being awake.
+developer: Craig Shaw
+website: https://github.com/icraigshaw/neotes-app-store
+dependencies: []
+repo: https://github.com/icraigshaw/neotes-app-store
+support: https://github.com/icraigshaw/neotes-app-store/issues
+port: 3000
+gallery: []
+path: ""
+defaultUsername: ""
+defaultPassword: ""
+releaseNotes: >-
+  First release. Sheets, library tree, ID-based internal links, bulk
+  plan/apply/undo, Eagle media ingest, pluggable video backend.
+submitter: Craig Shaw
+submission: https://github.com/icraigshaw/neotes-app-store
