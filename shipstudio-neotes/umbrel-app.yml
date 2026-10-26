@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.1.0"
+version: "0.1.1"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,7 +31,68 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  First release. Sheets, library tree, ID-based internal links, bulk
-  plan/apply/undo, Eagle media ingest, pluggable video backend.
+  Declares configurable settings so they appear under "Suggested by this app"
+  in app settings, with dropdowns for the two enum values and guidance notes.
+  No application change; same image as 0.1.0.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
+
+environment:
+  - name: NEOTES_SITE_URL
+    services: ["web"]
+    default: "http://umbrel.local:3000"
+    note: >-
+      Public origin of the published site. Set this to your Cloudflare Tunnel
+      hostname, e.g. https://notes.example.com, or canonical URLs, Open Graph
+      tags and feeds will all point at the wrong place.
+
+  - name: ADMIN_AUTH_MODE
+    services: ["web"]
+    default: "none"
+    options: ["none", "cf-access"]
+    note: >-
+      none leaves the editor unauthenticated and is for local testing only.
+      cf-access trusts Cloudflare Access in front of /admin. Switch to it only
+      once the Access policy is live, or the editor is exposed to the internet.
+
+  - name: EAGLE_BRIDGE_TOKEN
+    services: ["web"]
+    default: "change-me-in-production"
+    note: >-
+      Shared secret the Eagle bridge uses to upload media. Generate one with
+      openssl rand -hex 24. The app refuses to start in cf-access mode while
+      this is still the shipped default.
+
+  - name: MEDIA_VIDEO_BACKEND
+    services: ["web"]
+    default: "local"
+    options: ["local", "bunny"]
+    note: >-
+      local serves video from this Umbrel through the tunnel, which is fine for
+      short clips. bunny pushes to Bunny Stream at publish time and is what you
+      want for anything longform.
+
+  - name: BUNNY_STREAM_LIBRARY_ID
+    services: ["web"]
+    default: ""
+    note: Required when MEDIA_VIDEO_BACKEND is bunny.
+
+  - name: BUNNY_STREAM_API_KEY
+    services: ["web"]
+    default: ""
+    note: Required when MEDIA_VIDEO_BACKEND is bunny.
+
+  - name: BUNNY_STREAM_CDN_HOSTNAME
+    services: ["web"]
+    default: ""
+    note: Bunny pull-zone hostname serving the HLS playlists.
+
+  - name: CF_ACCESS_TEAM_DOMAIN
+    services: ["web"]
+    default: ""
+    note: Cloudflare Zero Trust team domain. Used when ADMIN_AUTH_MODE is cf-access.
+
+  - name: CF_ACCESS_AUD
+    services: ["web"]
+    default: ""
+    note: Application Audience (AUD) tag from the Cloudflare Access application.
