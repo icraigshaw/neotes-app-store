@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.3.0"
+version: "0.3.1"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,10 +31,9 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Replaces the plain textarea with a Markdown editor. Typing [[ searches your
-  sheets and ![[ searches your media, so links are picked from a list instead
-  of pasted by hand, and existing references render as a pill showing the
-  target's title rather than a raw id.
+  The preview now updates as you type rather than only on save, and publish
+  warnings update with it. "View live" opens the published page in a new tab so
+  it cannot discard unsaved edits.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
