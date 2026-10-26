@@ -18,7 +18,7 @@ services:
   web:
     # Pinned by digest, not tag: umbrelOS caches aggressively, and a mutable
     # :latest makes "did my update actually deploy?" unanswerable.
-    image: ghcr.io/icraigshaw/neotes@sha256:23e6ed2714b7d3ab15f5676c0dad0e9be35834cc874d29048ce34a8337d71141
+    image: ghcr.io/icraigshaw/neotes@sha256:5a4c1d64d48f1cbd24436817281103e7b3a10a8d4d739d5135deef90e9da2bca
     restart: on-failure
     stop_grace_period: 1m
     volumes:
@@ -28,7 +28,12 @@ services:
       # to the disk it is already on. Read-only — the app never writes here, and
       # published pages are served from derivatives it owns, never from this
       # path, so reorganising the library cannot break a published page.
-      - ${UMBREL_ROOT}/data/storage:/storage:ro
+      # umbrelOS moved user files from data/storage to home at some point, and
+      # umbreld rewrites the old path only on versions that know about the
+      # move. Mounting both covers either layout; the app scans whichever
+      # actually has content.
+      - ${UMBREL_ROOT}/home:/storage:ro
+      - ${UMBREL_ROOT}/data/storage:/storage-legacy:ro
     environment:
       # --- Shown in the Umbrel app settings UI under "Suggested by this app" ---
       # Public origin of the published site. Must match the Cloudflare Tunnel
