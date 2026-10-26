@@ -18,11 +18,17 @@ services:
   web:
     # Pinned by digest, not tag: umbrelOS caches aggressively, and a mutable
     # :latest makes "did my update actually deploy?" unanswerable.
-    image: ghcr.io/icraigshaw/neotes@sha256:b13f2a748bc3fa7739a7e5d5e75729c70dcbc67b9897461b705cdc34430ee9fa
+    image: ghcr.io/icraigshaw/neotes@sha256:cec5b201d2c3dff54f6d046a78fbad42ecd0728c2603fdd8dfd39bc254fe8a58
     restart: on-failure
     stop_grace_period: 1m
     volumes:
       - ${APP_DATA_DIR}/data:/data
+      # Umbrel's own file storage, the same tree its Samba app shares. An Eagle
+      # library kept there is read in place: no uploading a multi-gigabyte video
+      # to the disk it is already on. Read-only — the app never writes here, and
+      # published pages are served from derivatives it owns, never from this
+      # path, so reorganising the library cannot break a published page.
+      - ${UMBREL_ROOT}/data/storage:/storage:ro
     environment:
       # --- Shown in the Umbrel app settings UI under "Suggested by this app" ---
       # Public origin of the published site. Must match the Cloudflare Tunnel
@@ -44,3 +50,7 @@ services:
 
       # Shared secret the Eagle bridge uses. CHANGE THIS.
       EAGLE_BRIDGE_TOKEN: "change-me-in-production"
+
+      # Path to an Eagle library under /storage. Empty hides the library
+      # browser; the app works fine without it.
+      EAGLE_LIBRARY_PATH: ""

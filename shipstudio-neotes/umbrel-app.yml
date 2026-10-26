@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.3.1"
+version: "0.4.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,9 +31,10 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  The preview now updates as you type rather than only on save, and publish
-  warnings update with it. "View live" opens the published page in a new tab so
-  it cannot discard unsaved edits.
+  Reads an Eagle library directly from the Umbrel's own file storage. Browse and
+  search it in the app, and import an item with one click — no uploading, and
+  the Eagle desktop app does not need to be running. Set EAGLE_LIBRARY_PATH to
+  your library's path under /storage to enable it.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
@@ -102,3 +103,12 @@ environment:
       Application Audience (AUD) tag from the Access application. Found under
       Access controls > Applications > your app > Overview. Required when
       ADMIN_AUTH_MODE is cf-access.
+
+  - name: EAGLE_LIBRARY_PATH
+    services: ["web"]
+    default: ""
+    note: >-
+      Path to an Eagle library inside the container, e.g.
+      /storage/Eagle/My Library.library — /storage is your Umbrel's file
+      storage, the same tree the Samba app shares. Leave empty to hide the
+      library browser.
