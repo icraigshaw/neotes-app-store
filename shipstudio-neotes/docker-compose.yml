@@ -8,6 +8,12 @@ services:
     environment:
       APP_HOST: shipstudio-neotes_web_1
       APP_PORT: 3000
+      # The published site is meant to be read by anyone, so app_proxy must not
+      # put the umbrelOS login wall in front of it — readers have no umbrelOS
+      # account. The editor is still protected: with ADMIN_AUTH_MODE=cf-access
+      # the app itself rejects any request to /admin that arrives without a
+      # Cloudflare Access identity, including requests from the local network.
+      PROXY_AUTH_ADD: "false"
 
   web:
     # Pinned by digest, not tag: umbrelOS caches aggressively, and a mutable

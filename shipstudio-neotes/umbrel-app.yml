@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.1.1"
+version: "0.1.2"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,9 +31,9 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Declares configurable settings so they appear under "Suggested by this app"
-  in app settings, with dropdowns for the two enum values and guidance notes.
-  No application change; same image as 0.1.0.
+  Serves the published site without the umbrelOS login wall, so readers reaching
+  it through a Cloudflare Tunnel are not redirected to a login they cannot pass.
+  The editor stays protected by Cloudflare Access. Same image as 0.1.0.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
