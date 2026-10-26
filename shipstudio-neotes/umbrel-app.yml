@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.2.0"
+version: "0.3.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,11 +31,10 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Verifies the Cloudflare Access token on every editor request instead of
-  trusting a header. Closes a hole where anyone on the local network could set
-  Cf-Access-Authenticated-User-Email by hand and be treated as a signed-in
-  editor. Set CF_ACCESS_TEAM_DOMAIN and CF_ACCESS_AUD, which are now required
-  for the editor to unlock.
+  Replaces the plain textarea with a Markdown editor. Typing [[ searches your
+  sheets and ![[ searches your media, so links are picked from a list instead
+  of pasted by hand, and existing references render as a pill showing the
+  target's title rather than a raw id.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
