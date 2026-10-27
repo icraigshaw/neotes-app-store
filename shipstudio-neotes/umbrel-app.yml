@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.5.0"
+version: "0.6.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,10 +31,11 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Finds Eagle libraries in your Umbrel's files and lets you pick one in the app
-  with a single click — no settings variable and no restart. Mounts both the
-  current and older umbrelOS file-storage layouts, so the library is found
-  whichever your Umbrel uses.
+  Fixes the Eagle library never being readable. umbrelOS grants apps access to
+  your files through a permission you choose, not through the app mounting a
+  path itself — so Neotes now requests it properly. After updating, open the
+  app's settings, grant access to the folder holding your Eagle library, then
+  pick the library on the Eagle page.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
@@ -111,3 +112,15 @@ environment:
       Optional. Leave empty — the app finds libraries under /storage and you
       pick one in the Eagle page, which needs no restart. Set this only to pin
       a specific path; it then overrides the in-app choice.
+
+folderAccess:
+  - id: eagle-library
+    name: Eagle library
+    note: >-
+      Choose the folder holding your Eagle library — either the .library folder
+      itself or a parent of it. Neotes reads it read-only to generate web
+      versions of the images and video you publish, and never writes to it.
+    mounts:
+      - service: web
+        targetPath: /storage
+        readOnly: true
