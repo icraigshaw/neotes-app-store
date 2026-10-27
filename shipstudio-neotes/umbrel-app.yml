@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.6.0"
+version: "0.6.1"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,11 +31,9 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Fixes the Eagle library never being readable. umbrelOS grants apps access to
-  your files through a permission you choose, not through the app mounting a
-  path itself — so Neotes now requests it properly. After updating, open the
-  app's settings, grant access to the folder holding your Eagle library, then
-  pick the library on the Eagle page.
+  Now published for arm64 as well as amd64, so it installs on an Umbrel Home or
+  Raspberry Pi and not only Umbrel Pro. Packaging fixes found by Umbrel's own
+  app store linter.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
