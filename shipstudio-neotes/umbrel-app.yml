@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.6.1"
+version: "0.7.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,9 +31,10 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Now published for arm64 as well as amd64, so it installs on an Umbrel Home or
-  Raspberry Pi and not only Umbrel Pro. Packaging fixes found by Umbrel's own
-  app store linter.
+  Fixes the Eagle library page always reporting that no storage was mounted.
+  The page was being prerendered when the image was built, so it showed the
+  state of the empty build container rather than your Umbrel. Granting folder
+  access worked all along — update, open Eagle, and your library should appear.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
