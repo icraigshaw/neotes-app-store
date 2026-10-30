@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.8.0"
+version: "0.8.1"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,13 +31,13 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Import your Ulysses notes. Export them as a TextBundle and drop it on the new
-  Import page: each note's comment block (18.55 §n) becomes its properties,
-  generated tables of contents are dropped, links between notes and images
-  come across, and the whole import can be undone. The Library gains slicers
-  to filter by notebook, §-tags, project paths and symbols in combination,
-  sorted in Zettelkasten order, and the editor suggests the next note, branch
-  or expression address.
+  Imports no longer wait for videos. A video is added straight away with a
+  still frame and converted in the background, so one long clip cannot hold up
+  hundreds of notes; it plays once converted, and conversion carries on across
+  restarts. An import cut off by a restart now says so and offers Try again,
+  which picks up where it stopped without duplicating notes. The progress page
+  names the file being worked on. If an import was running when you updated,
+  open it and choose Try again.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
