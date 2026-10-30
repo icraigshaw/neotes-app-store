@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.7.1"
+version: "0.8.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,11 +31,13 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Finds your Eagle library when you grant the .library folder itself. umbrelOS
-  mounts the granted folder as the library, and Neotes only looked for
-  libraries inside it. EAGLE_LIBRARY_PATH can be left empty; a path copied from
-  your Mac or Umbrel is now matched to the granted library instead of
-  overriding it.
+  Import your Ulysses notes. Export them as a TextBundle and drop it on the new
+  Import page: each note's comment block (18.55 §n) becomes its properties,
+  generated tables of contents are dropped, links between notes and images
+  come across, and the whole import can be undone. The Library gains slicers
+  to filter by notebook, §-tags, project paths and symbols in combination,
+  sorted in Zettelkasten order, and the editor suggests the next note, branch
+  or expression address.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
