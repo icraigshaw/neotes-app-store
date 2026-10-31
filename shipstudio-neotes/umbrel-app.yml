@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.9.0"
+version: "0.10.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -34,12 +34,13 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  A Ulysses-style editor. A markup toolbar with Ulysses' shortcuts, word
-  count, and a Live mode that hides Markdown syntax as you write. Split opens
-  a second sheet alongside the first. Media browses your Eagle library inside
-  the editor — folders, toggleable tag filters, full-size image and video
-  preview, annotations — and inserts an item in one click. Search (Cmd-Shift-F)
-  covers every note, properties line and Eagle annotation.
+  Longform video on Bunny Stream. With MEDIA_VIDEO_BACKEND set to bunny, an
+  imported video uploads to Bunny in the background and plays from Bunny's CDN
+  once encoded, instead of streaming through your home connection. Videos
+  imported earlier can be moved across from the Media page, which also shows
+  each video's upload and encoding progress. Firefox and other browsers
+  without built-in HLS now play these streams too. Also: the Commonplace icon
+  in browser tabs and on iOS home screens.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
@@ -75,8 +76,9 @@ environment:
     options: ["local", "bunny"]
     note: >-
       local serves video from this Umbrel through the tunnel, which is fine for
-      short clips. bunny pushes to Bunny Stream at publish time and is what you
-      want for anything longform.
+      short clips. bunny uploads each imported video to Bunny Stream in the
+      background and plays it from Bunny's CDN — what you want for anything
+      longform. Videos already imported can be moved from the Media page.
 
   - name: BUNNY_STREAM_LIBRARY_ID
     services: ["web"]
@@ -91,7 +93,9 @@ environment:
   - name: BUNNY_STREAM_CDN_HOSTNAME
     services: ["web"]
     default: ""
-    note: Bunny pull-zone hostname serving the HLS playlists.
+    note: >-
+      The library's CDN hostname, e.g. vz-abc123.b-cdn.net (Bunny Stream →
+      your library → API). A pasted https:// URL is fine too.
 
   - name: CF_ACCESS_TEAM_DOMAIN
     services: ["web"]
