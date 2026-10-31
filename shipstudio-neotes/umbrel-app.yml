@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.11.1"
+version: "0.11.2"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -35,11 +35,12 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  The RSS feed now works. Subscribe to everything at /feed.xml, or to any
-  filtered view, such as only Expressions, one sub-property or one tag: the
-  "RSS for this view" link on the public site gives its address. Items carry
-  each note's full text and recorded date, with videos shown as a linked
-  still frame. The Library also gains a select-all checkbox for bulk actions.
+  Shared links now look right: a note's link on X, Messages or Slack shows its
+  title, a short summary and its first image (or a video's still). Public
+  notes have Share on X, Copy link and, on phones, the system share sheet.
+  Published notes in the editor get the same, with the note's tags offered as
+  hashtags in the X draft. Sharing opens X's own compose window, so it needs
+  no X developer account.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
