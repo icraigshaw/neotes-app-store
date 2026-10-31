@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.11.0"
+version: "0.11.1"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -35,16 +35,11 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Notes are now dated from their notebooks: each note gets an estimated
-  "recorded" month, spread across the date range on its notebook's first
-  note, and you can set any date by hand in the editor. A new Properties page
-  names your properties and adds nested sub-properties, such as Novel or
-  Social Media under Expression, plus topic tags for notes. Readers can switch
-  between Notes and Expressions, narrow to a sub-property, filter by tag or by
-  when notes were recorded (this week last year, 5 years ago, or any range),
-  and sort by date. The Eagle bridge is gone: media is imported only from the
-  library on the Umbrel, which avoids holding whole videos in memory, and the
-  EAGLE_BRIDGE_TOKEN setting is no longer used.
+  The RSS feed now works. Subscribe to everything at /feed.xml, or to any
+  filtered view, such as only Expressions, one sub-property or one tag: the
+  "RSS for this view" link on the public site gives its address. Items carry
+  each note's full text and recorded date, with videos shown as a linked
+  still frame. The Library also gains a select-all checkbox for bulk actions.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
