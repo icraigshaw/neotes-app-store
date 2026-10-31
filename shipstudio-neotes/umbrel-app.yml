@@ -26,6 +26,9 @@ dependencies: []
 repo: https://github.com/icraigshaw/neotes-app-store
 support: https://github.com/icraigshaw/neotes-app-store/issues
 port: 3000
+# Served from the public app store repo. PNG, not SVG: raw.githubusercontent.com
+# sends SVG as text/plain, which a browser will not render as an image.
+icon: https://raw.githubusercontent.com/icraigshaw/neotes-app-store/main/shipstudio-neotes/icon.png
 gallery: []
 path: ""
 defaultUsername: ""
