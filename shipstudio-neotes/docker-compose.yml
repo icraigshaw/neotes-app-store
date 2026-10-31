@@ -18,7 +18,7 @@ services:
   web:
     # Pinned by digest, not tag: umbrelOS caches aggressively, and a mutable
     # :latest makes "did my update actually deploy?" unanswerable.
-    image: ghcr.io/icraigshaw/neotes:0.8.2@sha256:35a0cb5eeb1ac122b2d5ec2ce19c389f4ce0986b6884427365230d83b79babad
+    image: ghcr.io/icraigshaw/neotes:0.9.0@sha256:55a56528a5fd4a5f31da9e1b6fb45c7af188c06642d8f1d4950c70f9ef78ba38
     restart: on-failure
     stop_grace_period: 1m
     volumes:

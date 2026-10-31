@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.8.2"
+version: "0.9.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -31,12 +31,12 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Readers get the same slicers as the editor. The public front page filters
-  published notes by notebook, §-tags, project paths and symbols, with search,
-  listed in Zettelkasten order under notebook headings. A note shows its
-  address and properties as links, and previous/next follow the view the
-  reader came from. Note: every property on a published note is now visible
-  to readers.
+  A Ulysses-style editor. A markup toolbar with Ulysses' shortcuts, word
+  count, and a Live mode that hides Markdown syntax as you write. Split opens
+  a second sheet alongside the first. Media browses your Eagle library inside
+  the editor — folders, toggleable tag filters, full-size image and video
+  preview, annotations — and inserts an item in one click. Search (Cmd-Shift-F)
+  covers every note, properties line and Eagle annotation.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
