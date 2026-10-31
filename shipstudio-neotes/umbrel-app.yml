@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.10.0"
+version: "0.11.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -18,8 +18,9 @@ description: >-
   run as plan-then-apply, with a one-click undo for the whole batch.
 
 
-  Media is curated in Eagle and copied into Neotes at publish time by a small
-  bridge agent, so published pages never depend on a desktop being awake.
+  Media is curated in Eagle and imported straight from the library on the
+  Umbrel's own storage, so published pages never depend on a desktop being
+  awake.
 developer: Craig Shaw
 website: https://github.com/icraigshaw/neotes-app-store
 dependencies: []
@@ -34,13 +35,16 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Longform video on Bunny Stream. With MEDIA_VIDEO_BACKEND set to bunny, an
-  imported video uploads to Bunny in the background and plays from Bunny's CDN
-  once encoded, instead of streaming through your home connection. Videos
-  imported earlier can be moved across from the Media page, which also shows
-  each video's upload and encoding progress. Firefox and other browsers
-  without built-in HLS now play these streams too. Also: the Commonplace icon
-  in browser tabs and on iOS home screens.
+  Notes are now dated from their notebooks: each note gets an estimated
+  "recorded" month, spread across the date range on its notebook's first
+  note, and you can set any date by hand in the editor. A new Properties page
+  names your properties and adds nested sub-properties, such as Novel or
+  Social Media under Expression, plus topic tags for notes. Readers can switch
+  between Notes and Expressions, narrow to a sub-property, filter by tag or by
+  when notes were recorded (this week last year, 5 years ago, or any range),
+  and sort by date. The Eagle bridge is gone: media is imported only from the
+  library on the Umbrel, which avoids holding whole videos in memory, and the
+  EAGLE_BRIDGE_TOKEN setting is no longer used.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
@@ -61,14 +65,6 @@ environment:
       none leaves the editor unauthenticated and is for local testing only.
       cf-access trusts Cloudflare Access in front of /admin. Switch to it only
       once the Access policy is live, or the editor is exposed to the internet.
-
-  - name: EAGLE_BRIDGE_TOKEN
-    services: ["web"]
-    default: "change-me-in-production"
-    note: >-
-      Shared secret the Eagle bridge uses to upload media. Generate one with
-      openssl rand -hex 24. The app refuses to start in cf-access mode while
-      this is still the shipped default.
 
   - name: MEDIA_VIDEO_BACKEND
     services: ["web"]

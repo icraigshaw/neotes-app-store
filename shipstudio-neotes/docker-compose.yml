@@ -18,7 +18,7 @@ services:
   web:
     # Pinned by digest, not tag: umbrelOS caches aggressively, and a mutable
     # :latest makes "did my update actually deploy?" unanswerable.
-    image: ghcr.io/icraigshaw/neotes:0.10.0@sha256:1e44e23b244ccaecc309ba7eb0aef0c53746a4a80ac82bf2dce26044c233bf64
+    image: ghcr.io/icraigshaw/neotes:0.11.0@sha256:2a36f42c9bddfdb57fed6c80ccfab240433176d8a136f7f157f5b519adc98140
     restart: on-failure
     stop_grace_period: 1m
     volumes:
@@ -41,9 +41,6 @@ services:
       BUNNY_STREAM_LIBRARY_ID: ""
       BUNNY_STREAM_API_KEY: ""
       BUNNY_STREAM_CDN_HOSTNAME: ""
-
-      # Shared secret the Eagle bridge uses. CHANGE THIS.
-      EAGLE_BRIDGE_TOKEN: "change-me-in-production"
 
       # Path to an Eagle library under /storage. Empty hides the library
       # browser; the app works fine without it.
