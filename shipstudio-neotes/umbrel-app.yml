@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.11.2"
+version: "0.12.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -35,12 +35,14 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Shared links now look right: a note's link on X, Messages or Slack shows its
-  title, a short summary and its first image (or a video's still). Public
-  notes have Share on X, Copy link and, on phones, the system share sheet.
-  Published notes in the editor get the same, with the note's tags offered as
-  hashtags in the X draft. Sharing opens X's own compose window, so it needs
-  no X developer account.
+  Private notes: tick Private on any property in the Properties page (a new
+  Private property is ready to use), and notes carrying it never appear on the
+  public site. Redactions: select text and press Redact, or type ||text||, and
+  readers see a black bar while the words stay out of the page, the feed and
+  public search. The Library can filter to notes with redactions. Notes to self
+  written as comments are no longer sent to readers at all (before, they were
+  hidden but still in the page source and the feed). Public notes now list the
+  reader's current view down the left for quicker moving around.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
