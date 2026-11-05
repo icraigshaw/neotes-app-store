@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.13.0"
+version: "0.14.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -35,14 +35,12 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Ulysses imports keep their line breaks: each line becomes its own paragraph
-  again. For notes already imported, select them in the Library and choose the
-  bulk action Fix Ulysses line breaks (previewed first, undoable). Notes can be
-  moved to the trash from the Library or the editor, then restored or deleted
-  for good from the Trash page. Properties, including imported ones, can be
-  merged into another or removed from their notes. Tags can be grouped under
-  other tags and given colours, which carry down to sub-tags and show on the
-  public site.
+  Tag groups: add groups in Properties & tags and drag tags into them (or back
+  out). A note's branches and expressions now read on as sections beneath it,
+  in the editor and on the public site, and a filtered view shows only the
+  relevant ones. The + Expression button has a menu for anchoring a note with
+  any other main property, such as Private. Public notes have a random-note
+  button between Previous and Next that stays within the reader's view.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
