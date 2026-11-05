@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.12.0"
+version: "0.13.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -35,14 +35,14 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Private notes: tick Private on any property in the Properties page (a new
-  Private property is ready to use), and notes carrying it never appear on the
-  public site. Redactions: select text and press Redact, or type ||text||, and
-  readers see a black bar while the words stay out of the page, the feed and
-  public search. The Library can filter to notes with redactions. Notes to self
-  written as comments are no longer sent to readers at all (before, they were
-  hidden but still in the page source and the feed). Public notes now list the
-  reader's current view down the left for quicker moving around.
+  Ulysses imports keep their line breaks: each line becomes its own paragraph
+  again. For notes already imported, select them in the Library and choose the
+  bulk action Fix Ulysses line breaks (previewed first, undoable). Notes can be
+  moved to the trash from the Library or the editor, then restored or deleted
+  for good from the Trash page. Properties, including imported ones, can be
+  merged into another or removed from their notes. Tags can be grouped under
+  other tags and given colours, which carry down to sub-tags and show on the
+  public site.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
