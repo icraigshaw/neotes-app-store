@@ -2,7 +2,7 @@ manifestVersion: 1
 id: shipstudio-neotes
 category: files
 name: Neotes
-version: "0.14.0"
+version: "0.15.0"
 tagline: Write, manage and publish notes
 description: >-
   A notetaking and journalling app with a publishing pipeline.
@@ -35,12 +35,11 @@ path: ""
 defaultUsername: ""
 defaultPassword: ""
 releaseNotes: >-
-  Tag groups: add groups in Properties & tags and drag tags into them (or back
-  out). A note's branches and expressions now read on as sections beneath it,
-  in the editor and on the public site, and a filtered view shows only the
-  relevant ones. The + Expression button has a menu for anchoring a note with
-  any other main property, such as Private. Public notes have a random-note
-  button between Previous and Next that stays within the reader's view.
+  Branches and expressions are no longer listed a second time on the home
+  page and in the note sidebar: they read on as sections under their note.
+  Filtering by a kind such as Expressions still lists them on their own.
+  Opening a branch directly highlights its note in the sidebar, and the
+  random-note button picks from the notes as listed.
 submitter: Craig Shaw
 submission: https://github.com/icraigshaw/neotes-app-store
 
